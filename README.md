@@ -2,6 +2,8 @@
 
 Bu proje, çeşitli maymun türleri hakkında bilgi edinmek için geliştirilmiş interaktif bir konsol uygulamasıdır. C# ve .NET 9.0 kullanılarak geliştirilmiş olup, **Model Context Protocol (MCP)** server entegrasyonu ile desteklenmektedir.
 
+> 🤖 **Bu proje GitHub Copilot Agent Mode kullanılarak geliştirilmiştir.** Yapay zeka destekli geliştirme sürecinin bir örneğidir.
+
 ## 🔗 MCP Server Entegrasyonu
 
 Bu proje **MonkeyMCP** server ile entegre çalışacak şekilde tasarlanmıştır. MCP konfigürasyonu `.vscode/mcp.json` dosyasında tanımlanmıştır:
@@ -162,11 +164,19 @@ Uygulama, her etkileşimden sonra rastgele ASCII art gösterimleri sunar:
 - **Console Application**: Uygulama türü
 - **MCP (Model Context Protocol)**: Server entegrasyonu
 - **Docker**: MonkeyMCP container desteği
+- **GitHub Copilot Agent Mode**: AI destekli geliştirme
 
 ### MCP Server Özellikleri
 - **MonkeyMCP Container**: Docker üzerinde çalışan maymun veri servisi
 - **GitHub Copilot Entegrasyonu**: MCP protokolü ile AI destekli geliştirme
 - **VS Code Konfigürasyonu**: `.vscode/mcp.json` ile otomatik bağlantı
+
+### 🤖 AI Destekli Geliştirme
+Bu proje **GitHub Copilot Agent Mode** kullanılarak geliştirilmiştir:
+- **Otomatik kod üretimi**: AI destekli kod yazımı
+- **MCP entegrasyonu**: Model Context Protocol ile gelişmiş AI önerileri
+- **İnteraktif geliştirme**: Agent mode ile gerçek zamanlı kod iyileştirmeleri
+- **Kod kalitesi**: AI destekli best practices uygulaması
 
 ### Tasarım Desenleri
 - **Service Pattern**: İş mantığı yönetimi
@@ -216,6 +226,7 @@ Bu proje MIT lisansı altında lisanslanmıştır.
 ## 🙏 Teşekkürler
 
 Bu projeyi geliştirirken aşağıdaki kaynaklara teşekkürler:
+- **GitHub Copilot Agent Mode** - AI destekli geliştirme deneyimi için
 - **James Montemagno** - MonkeyMCP Docker container'ı için
 - **Model Context Protocol (MCP)** topluluğu
 - Maymun türleri hakkında bilgi sağlayan bilimsel kaynaklar
@@ -223,4 +234,4 @@ Bu projeyi geliştirirken aşağıdaki kaynaklara teşekkürler:
 
 ---
 
-*🐒 "Maymunlar hakkında bilgi edinmenin en eğlenceli yolu!" 🐒*
+*🤖 "GitHub Copilot Agent Mode ile geliştirilen, maymunlar hakkında bilgi edinmenin en eğlenceli yolu!" 🐒*
