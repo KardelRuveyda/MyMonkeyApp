@@ -1,6 +1,37 @@
 # 🐒 MyMonkeyApp - İnteraktif Maymun Türleri Uygulaması
 
-Bu proje, çeşitli maymun türleri hakkında bilgi edinmek için geliştirilmiş interaktif bir konsol uygulamasıdır. C# ve .NET 9.0 kullanılarak geliştirilmiştir.
+Bu proje, çeşitli maymun türleri hakkında bilgi edinmek için geliştirilmiş interaktif bir konsol uygulamasıdır. C# ve .NET 9.0 kullanılarak geliştirilmiş olup, **Model Context Protocol (MCP)** server entegrasyonu ile desteklenmektedir.
+
+## 🔗 MCP Server Entegrasyonu
+
+Bu proje **MonkeyMCP** server ile entegre çalışacak şekilde tasarlanmıştır. MCP konfigürasyonu `.vscode/mcp.json` dosyasında tanımlanmıştır:
+
+```json
+{
+    "inputs": [],
+    "servers": {
+        "monkeymcp": {
+            "command": "docker",
+            "args": [
+                "run",
+                "-i",
+                "--rm",
+                "jamesmontemagno/monkeymcp"
+            ],
+            "env": {}
+        },
+        "github": {
+            "type": "http",
+            "url": "https://api.githubcopilot.com/mcp/"
+        }
+    }
+}
+```
+
+### 🐳 MonkeyMCP Docker Container
+- **Container**: `jamesmontemagno/monkeymcp`
+- **Amaç**: Maymun verilerini MCP protokolü üzerinden sağlama
+- **Entegrasyon**: GitHub Copilot ile birlikte çalışma
 
 ## 🎯 Proje Özellikleri
 
@@ -40,6 +71,8 @@ Bu proje, çeşitli maymun türleri hakkında bilgi edinmek için geliştirilmi�
 
 ```
 MyMonkeyApp/
+├── .vscode/
+│   └── mcp.json               # MCP server konfigürasyonu
 ├── Models/
 │   └── Monkey.cs              # Maymun veri modeli
 ├── Services/
@@ -70,6 +103,9 @@ public class Monkey
 ### Gereksinimler
 - .NET 9.0 SDK
 - Windows/Linux/macOS
+- **Docker** (MonkeyMCP server için)
+- **VS Code** (MCP entegrasyonu için önerilen)
+- **GitHub Copilot** (MCP özelliklerini kullanmak için)
 
 ### Çalıştırma
 ```bash
@@ -78,6 +114,12 @@ git clone https://github.com/KardelRuveyda/MyMonkeyApp.git
 
 # Proje dizinine gidin
 cd MyMonkeyApp
+
+# Docker'ın çalıştığından emin olun
+docker --version
+
+# MCP server'ı test edin (opsiyonel)
+docker run -i --rm jamesmontemagno/monkeymcp
 
 # Uygulamayı çalıştırın
 dotnet run
@@ -118,6 +160,13 @@ Uygulama, her etkileşimden sonra rastgele ASCII art gösterimleri sunar:
 - **.NET 9.0**: Framework
 - **LINQ**: Veri sorgulama
 - **Console Application**: Uygulama türü
+- **MCP (Model Context Protocol)**: Server entegrasyonu
+- **Docker**: MonkeyMCP container desteği
+
+### MCP Server Özellikleri
+- **MonkeyMCP Container**: Docker üzerinde çalışan maymun veri servisi
+- **GitHub Copilot Entegrasyonu**: MCP protokolü ile AI destekli geliştirme
+- **VS Code Konfigürasyonu**: `.vscode/mcp.json` ile otomatik bağlantı
 
 ### Tasarım Desenleri
 - **Service Pattern**: İş mantığı yönetimi
@@ -132,12 +181,21 @@ Uygulama, her etkileşimden sonra rastgele ASCII art gösterimleri sunar:
 
 ## 🌟 Gelecek Geliştirmeler
 
+### 🔄 MCP Entegrasyonu
+- [ ] MonkeyMCP server'dan canlı veri çekme
+- [ ] MCP protokolü üzerinden maymun verilerini güncelleme
+- [ ] GitHub Copilot ile gelişmiş AI önerileri
+
+### 📊 Veri Yönetimi
 - [ ] JSON dosyasından veri okuma
 - [ ] Maymun fotoğrafları ekleme
 - [ ] Web API entegrasyonu
 - [ ] Veritabanı desteği
+
+### 🌐 Kullanıcı Deneyimi
 - [ ] Çoklu dil desteği
 - [ ] Export/Import özellikleri
+- [ ] Web arayüzü geliştirme
 
 ## 📄 Lisans
 
@@ -157,7 +215,11 @@ Bu proje MIT lisansı altında lisanslanmıştır.
 
 ## 🙏 Teşekkürler
 
-Bu projeyi geliştirirken maymun türleri hakkında bilgi sağlayan kaynaklar ve açık kaynak topluluğuna teşekkürler.
+Bu projeyi geliştirirken aşağıdaki kaynaklara teşekkürler:
+- **James Montemagno** - MonkeyMCP Docker container'ı için
+- **Model Context Protocol (MCP)** topluluğu
+- Maymun türleri hakkında bilgi sağlayan bilimsel kaynaklar
+- Açık kaynak topluluğu ve katkıda bulunanlar
 
 ---
 
